@@ -1,3 +1,5 @@
 /fileInputTest/*
 /fileOutput/*
 /fileInput/*
+/target/
+/.idea/
