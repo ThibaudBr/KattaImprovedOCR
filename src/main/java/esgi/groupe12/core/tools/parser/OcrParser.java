@@ -1,8 +1,9 @@
-package esgi.groupe12.core.tools;
+package esgi.groupe12.core.tools.parser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 public class OcrParser {
     private final HashMap<String, String> codex;
@@ -12,7 +13,7 @@ public class OcrParser {
     public OcrParser(int height, int length) {
         this.height = height;
         this.length = length;
-        this.codex = CodexOCR.initializeCodex();
+        this.codex = CodexOCR.initializeCodex(height, length);
     }
 
     public List<String> run(List<String> ocrList){
@@ -35,11 +36,7 @@ public class OcrParser {
 
         for (int i = 0; i < length*9; i += length ){
             value = codex.get(parse(i, ocrSublist));
-            if (value == null){
-                result.append("?");
-            }else{
-                result.append(value);
-            }
+            result.append(Objects.requireNonNullElse(value, "?"));
         }
 
         if (result.toString().contains("?")){

@@ -3,10 +3,10 @@ package esgi.groupe12;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import esgi.groupe12.core.tools.FileType;
+import esgi.groupe12.core.tools.fileManagement.FileType;
 import esgi.groupe12.core.tools.fileManagement.ReadFile;
-import esgi.groupe12.core.tools.OcrParser;
-import esgi.groupe12.core.tools.OrderList;
+import esgi.groupe12.core.tools.parser.OcrParser;
+import esgi.groupe12.core.tools.parser.OrderList;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,10 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
+public class OcrParserUserCaseTest
 {
     private String pathFileInput;
     private String pathFileOutput;
@@ -75,7 +72,7 @@ public class AppTest
     @Test
     public void TestUserCase2()
     {
-        OcrParser ocrParser = new OcrParser(0, 0);
+        OcrParser ocrParser = new OcrParser(heightOCR, lengthOCR);
         assert ocrParser.calculChecksum(new StringBuilder("356609701"));
     }
 

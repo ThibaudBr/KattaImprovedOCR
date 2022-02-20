@@ -2,7 +2,7 @@ package esgi.groupe12.core;
 
 import esgi.groupe12.core.tools.fileManagement.CreateFile;
 import esgi.groupe12.core.tools.fileManagement.ReadFile;
-import esgi.groupe12.core.tools.OcrParser;
+import esgi.groupe12.core.tools.parser.OcrParser;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

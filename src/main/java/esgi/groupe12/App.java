@@ -2,14 +2,9 @@ package esgi.groupe12;
 
 import esgi.groupe12.cli.CLILauncher;
 import esgi.groupe12.core.CoreOCRParser;
-import esgi.groupe12.core.tools.OcrParser;
+import esgi.groupe12.core.tools.parser.OcrParser;
 import esgi.groupe12.core.tools.fileManagement.CreateFile;
 import esgi.groupe12.core.tools.fileManagement.ReadFile;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 
 /**
  * Hello world!

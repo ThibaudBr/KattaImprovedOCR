@@ -1,7 +1,6 @@
 package esgi.groupe12.core.tools.fileManagement;
 
-import esgi.groupe12.core.tools.FileType;
-import esgi.groupe12.core.tools.OrderList;
+import esgi.groupe12.core.tools.parser.OrderList;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -48,8 +47,8 @@ public class CreateFile {
             }
             myWriter.close();
         }catch (IOException e) {
-            System.out.println("An error occurred.");
             e.printStackTrace();
+            throw new RuntimeException("An error occurred while writing in file: " + name);
         }
     }
 
@@ -58,8 +57,8 @@ public class CreateFile {
             File outputFile = new File(pathFileOutput + name + ".txt");
             outputFile.createNewFile();
         }catch (IOException e) {
-            System.out.println("An error occurred.");
             e.printStackTrace();
+            throw new RuntimeException("An error occurred while generating file: " + name);
         }
     }
 

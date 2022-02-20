@@ -1,4 +1,6 @@
-package esgi.groupe12.core.tools;
+package esgi.groupe12.core.tools.parser;
+
+import esgi.groupe12.core.tools.fileManagement.FileType;
 
 import java.util.ArrayList;
 import java.util.HashMap;

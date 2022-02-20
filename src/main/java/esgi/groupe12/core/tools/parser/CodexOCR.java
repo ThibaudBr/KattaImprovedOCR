@@ -1,5 +1,6 @@
-package esgi.groupe12.core.tools;
+package esgi.groupe12.core.tools.parser;
 
+import java.security.InvalidParameterException;
 import java.util.HashMap;
 
 public interface CodexOCR {
@@ -14,7 +15,15 @@ public interface CodexOCR {
     String EIGHT = " _ |_||_|   ";
     String NINE = " _ |_| _|   ";
 
-    static HashMap<String, String> initializeCodex() {
+    static HashMap<String, String> initializeCodex(int height, int length){
+        if (height == 4 && length == 3){
+            return initializeCodex43();
+        }else{
+            throw new InvalidParameterException("InvalidParameterException: No codex for the parameter" + height + " and " + length);
+        }
+    }
+
+    static private HashMap<String, String> initializeCodex43() {
         HashMap<String, String> codex = new HashMap<>();
 
         codex.put(ZERO, "0");

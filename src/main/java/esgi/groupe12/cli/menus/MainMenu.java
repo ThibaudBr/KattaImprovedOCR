@@ -2,10 +2,8 @@ package esgi.groupe12.cli.menus;
 
 import esgi.groupe12.cli.CLILauncher;
 import esgi.groupe12.cli.menus.forms.PathForm;
-import esgi.groupe12.core.tools.FileType;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class MainMenu extends Menu{
