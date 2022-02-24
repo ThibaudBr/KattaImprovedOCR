@@ -1,6 +1,6 @@
 package esgi.groupe12.core.tools.parser;
 
-import esgi.groupe12.core.tools.fileManagement.FileType;
+import esgi.groupe12.core.tools.FileType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +31,7 @@ public class OrderList {
         return orderedMap;
     }
 
-    private List<String> getUnknown(List<String> ocrList) {
+    public List<String> getUnknown(List<String> ocrList) {
         List<String> resultList = new ArrayList<>();
         for (String s: ocrList){
             if (s.contains(" ILL")){
@@ -41,7 +41,7 @@ public class OrderList {
         return resultList;
     }
 
-    private List<String> getErrored(List<String> ocrList) {
+    public List<String> getErrored(List<String> ocrList) {
         List<String> resultList = new ArrayList<>();
         for (String s: ocrList){
             if (s.contains(" ERR")){
@@ -51,7 +51,7 @@ public class OrderList {
         return resultList;
     }
 
-    private List<String> getAuthorized(List<String> ocrList) {
+    public List<String> getAuthorized(List<String> ocrList) {
         List<String> resultList = new ArrayList<>();
         for (String s: ocrList){
             if (!s.contains(" ERR") && !s.contains(" ILL")){

@@ -11,7 +11,7 @@ public class MainMenu extends Menu{
     public MainMenu(CLILauncher launcher) {
         super(launcher, "Menu Principale");
         System.out.println("Input file Path:" + launcher.getCoreOcrParser().getReadFile().getPathFileInput());
-        System.out.println("Input file Path:" + launcher.getCoreOcrParser().getCreateFile().getPathFileOutput());
+        System.out.println("Output file Path:" + launcher.getCoreOcrParser().getCreateFile().getPathFileOutput());
         System.out.println("Choose an action :");
 
         addAction(new Action( "Multiple Files (classic)") {

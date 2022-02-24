@@ -3,7 +3,7 @@ package esgi.groupe12;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import esgi.groupe12.core.tools.fileManagement.FileType;
+import esgi.groupe12.core.tools.FileType;
 import esgi.groupe12.core.tools.fileManagement.ReadFile;
 import esgi.groupe12.core.tools.parser.OcrParser;
 import esgi.groupe12.core.tools.parser.OrderList;
@@ -17,15 +17,13 @@ import java.util.List;
 public class OcrParserUserCaseTest
 {
     private String pathFileInput;
-    private String pathFileOutput;
-    private String dateNow;
     private int maxLigneInfile;
     private int heightOCR;
     private int lengthOCR;
 
     @Before
     public void initialize(){
-        pathFileInput = "/home/thibaud-briand/Programe/java_/KattaImpovedOCR/fileInputTest/";
+        pathFileInput = "/home/thibaud-briand/Programe/java_/KattaImpovedOCR/src/test/resources/fileInputTest/";
         heightOCR = 4;
         lengthOCR = 3;
         maxLigneInfile = 100 * heightOCR;

@@ -26,11 +26,11 @@ public class OcrParser {
         return finalResult;
     }
 
-    private int countNbRun(List<String> ocrList) {
+    public int countNbRun(List<String> ocrList) {
         return (ocrList.size() - ocrList.size()%height) / 4;
     }
 
-    private String runSublist(List<String> ocrSublist) {
+    public String runSublist(List<String> ocrSublist) {
         StringBuilder result = new StringBuilder();
         String value;
 
@@ -39,13 +39,18 @@ public class OcrParser {
             result.append(Objects.requireNonNullElse(value, "?"));
         }
 
-        if (result.toString().contains("?")){
-            result.append(" ILL");
-        }else if (calculChecksum(result)){
-            result.append(" ERR");
-        }
+        result.append(isWithErrorOrUnknown(result));
 
         return result.toString();
+    }
+
+    public String isWithErrorOrUnknown(StringBuilder result) {
+        if (result.toString().contains("?")){
+            return " ILL";
+        }else if (calculChecksum(result)){
+            return " ERR";
+        }
+        return "";
     }
 
     public boolean calculChecksum(StringBuilder result) {
@@ -56,14 +61,22 @@ public class OcrParser {
         return modulo%11 != 0;
     }
 
-    private String parse(int pos, List<String> ocr){
+    public String parse(int pos, List<String> ocr){
         StringBuilder number = new StringBuilder();
-        for(int i = 0; i<this.height; i++){
-            for(int j = pos; j<pos+3; j++){
-                number.append((ocr.get(i)).charAt(j));
-            }
+
+        for (int i = 0; i<this.height; i++){
+            number.append(parseEight(i, pos, ocr));
         }
         return number.toString();
     }
 
+    public StringBuilder parseEight(int i, int pos, List<String> ocr){
+        StringBuilder number = new StringBuilder();
+
+        for(int j = pos; j<pos+3; j++){
+            number.append((ocr.get(i)).charAt(j));
+        }
+
+        return number;
+    }
 }

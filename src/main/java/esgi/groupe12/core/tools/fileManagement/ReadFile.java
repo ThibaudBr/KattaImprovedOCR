@@ -14,17 +14,17 @@ public class ReadFile
         this.maxLigneInFile = maxLigneInFile;
     }
 
-    private List<String> getListFiles(){
-            File directoryPath = new File(pathFileInput);
-            return Arrays.asList(Objects.requireNonNull(directoryPath.list()));
-    }
-
     public List<List<String>> getAllString(){
         List<List<String>> allStrings = new ArrayList<>();
         for (String s: getListFiles()){
             allStrings.add(getStrings(s));
         }
         return allStrings;
+    }
+
+    public List<String> getListFiles(){
+            File directoryPath = new File(pathFileInput);
+            return Arrays.asList(Objects.requireNonNull(directoryPath.list()));
     }
 
     public List<String> getStrings(String fileName){
@@ -43,7 +43,7 @@ public class ReadFile
         return concatIfMaxLigne(ocrStrings);
     }
 
-    private List<String> concatIfMaxLigne(List<String> ocrString){
+    public List<String> concatIfMaxLigne(List<String> ocrString){
         if (ocrString.size() > maxLigneInFile){
             return ocrString.subList(0, maxLigneInFile);
         }else{
