@@ -1,3 +1,7 @@
+#Briand Thibaud
+#David-Henri ARNAUD
+#4AL2 groupe12
+
 #SUJET
 
 # Improved OCR
