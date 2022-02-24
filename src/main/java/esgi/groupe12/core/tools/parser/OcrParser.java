@@ -11,9 +11,10 @@ public class OcrParser {
     private final int length;
 
     public OcrParser(int height, int length) {
+        CodexOCR codexOCR = new CodexOCR();
         this.height = height;
         this.length = length;
-        this.codex = CodexOCR.initializeCodex(height, length);
+        this.codex = codexOCR.initializeCodex(height, length);
     }
 
     public List<String> run(List<String> ocrList){

@@ -9,7 +9,7 @@ import java.util.List;
 public class MainMenu extends Menu{
 
     public MainMenu(CLILauncher launcher) {
-        super(launcher, "Menu Principale");
+        super(launcher, "---- Main Menu");
         System.out.println("Input file Path:" + launcher.getCoreOcrParser().getReadFile().getPathFileInput());
         System.out.println("Output file Path:" + launcher.getCoreOcrParser().getCreateFile().getPathFileOutput());
         System.out.println("Choose an action :");
@@ -58,6 +58,13 @@ public class MainMenu extends Menu{
             public void execute() {
                 launcher.getCoreOcrParser().getCreateFile().setPathFileOutput(new PathForm().askEntries());
                 launcher.setActiveMenu(new MainMenu(launcher));
+            }
+        });
+
+        addAction(new Action("Help Menu") {
+            @Override
+            public void execute() {
+                launcher.setActiveMenu(new HelpMenu(launcher));
             }
         });
 
