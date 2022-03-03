@@ -2,6 +2,14 @@
 #David-Henri ARNAUD
 #4AL2 groupe12
 
+
+
+##Guide utilisation
+Mettre les fichiers à tester dans le repertoire fileInput et les fichiers de sortie seront généré dans le repertoire fileOutput.
+Pour démarrer l'application, il suffit de lancer le main dans le fichier app. il est possible de changer le chemin d'entrée et de sortie des fichiers
+dans l'invité de commande une fois l'application lancé.
+Le menu d'aide se trouve dans le menu 4 du menu de démarrage.
+
 #SUJET
 
 # Improved OCR
