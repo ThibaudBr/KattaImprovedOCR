@@ -14,7 +14,7 @@ public class ReadFileTest {
     private ReadFile readFile;
     @Before
     public void initialize(){
-        String pathFileInput = "/home/thibaud-briand/Programe/java_/KattaImpovedOCR/src/test/resources/fileInputTest/readFileTest/";
+        String pathFileInput = "src/test/resources/fileInputTest/readFileTest/";
         readFile = new ReadFile(pathFileInput, 20);
     }
 

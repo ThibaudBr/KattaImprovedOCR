@@ -23,7 +23,7 @@ public class OcrParserUserCaseTest
 
     @Before
     public void initialize(){
-        pathFileInput = "/home/thibaud-briand/Programe/java_/KattaImpovedOCR/src/test/resources/fileInputTest/";
+        pathFileInput = "src/test/resources/fileInputTest/";
         heightOCR = 4;
         lengthOCR = 3;
         maxLigneInfile = 100 * heightOCR;
