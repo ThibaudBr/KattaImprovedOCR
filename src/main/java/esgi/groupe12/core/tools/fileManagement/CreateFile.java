@@ -56,7 +56,7 @@ public class CreateFile {
     private void generateFile(String name){
         try {
             File outputFile = new File(pathFileOutput + name + ".txt");
-             outputFile.createNewFile();
+            outputFile.createNewFile();
         }catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException("An error occurred while generating file: " + name);

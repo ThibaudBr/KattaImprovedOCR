@@ -11,11 +11,11 @@ public class App
     public static void main( String[] args )
     {
         ReadFile readFile = new ReadFile(
-                "/home/thibaud-briand/Programme/java_/KattaImpovedOCR/fileInput/",
+                "fileInput/",
                 100 * 4
         );
         CreateFile createFile = new CreateFile(
-                "/home/thibaud-briand/Programme/java_/KattaImpovedOCR/fileOutput/"
+                "fileOutput/"
         );
 
         OcrParser ocrParser = new OcrParser(4, 3);

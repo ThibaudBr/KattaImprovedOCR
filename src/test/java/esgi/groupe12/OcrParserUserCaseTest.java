@@ -71,7 +71,7 @@ public class OcrParserUserCaseTest
     public void TestUserCase2()
     {
         OcrParser ocrParser = new OcrParser(heightOCR, lengthOCR);
-        assert ocrParser.calculChecksum(new StringBuilder("356609701"));
+        assert ocrParser.calculChecksum(new StringBuilder("123456789"));
     }
 
     @Test
